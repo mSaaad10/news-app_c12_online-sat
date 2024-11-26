@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:news_app_c12_online_sat/data/api/model/sources_response/source.dart';
-import 'package:news_app_c12_online_sat/presentation/screens/home/tabs/articles_list_widget/articles_list_widget.dart';
-import 'package:news_app_c12_online_sat/presentation/screens/home/tabs/category_details/widgets/sources_tab_widget/source_item_widget.dart';
+import 'package:news_app_c12_online_sat/presentation/screens/home/tabs/articles/view/articles_view.dart';
+import 'package:news_app_c12_online_sat/presentation/screens/home/tabs/sources/widgets/source_widget.dart';
 
-class SourcesTabWidget extends StatefulWidget {
-  SourcesTabWidget({super.key, required this.sources});
+class SourceTabs extends StatefulWidget {
+  SourceTabs({super.key, required this.sources});
 
   List<Source> sources;
   int x = 0;
 
   @override
-  State<SourcesTabWidget> createState() => _SourcesTabWidgetState();
+  State<SourceTabs> createState() => _SourceTabsState();
 }
 
-class _SourcesTabWidgetState extends State<SourcesTabWidget> {
+class _SourceTabsState extends State<SourceTabs> {
   int tappedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
-
     return Column(
       children: [
         DefaultTabController(
@@ -36,14 +35,14 @@ class _SourcesTabWidgetState extends State<SourcesTabWidget> {
               isScrollable: true,
               tabs: widget.sources
                   .map(
-                    (source) => SourceItemWidget(
+                    (source) => SourceWidget(
                         source: source,
                         isSelected:
                             widget.sources.indexOf(source) == tappedIndex),
                   )
                   .toList()),
         ),
-        ArticlesListWidget(
+        ArticlesView(
           source: widget.sources[tappedIndex],
         )
       ],
