@@ -2,12 +2,12 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:news_app_c12_online_sat/config/theme/app_styles.dart';
-import 'package:news_app_c12_online_sat/data/api/model/articles_response/article.dart';
+import 'package:news_app_c12_online_sat/domain/etities/article_entity.dart';
 
 class ArticleWidget extends StatelessWidget {
   ArticleWidget({super.key, required this.article});
 
-  Article article;
+  ArticleEntity article;
 
   @override
   Widget build(BuildContext context) {

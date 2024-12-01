@@ -14,7 +14,7 @@ class RoutesManager {
         );
       case home:
         return MaterialPageRoute(
-          builder: (context) => Home(),
+          builder: (context) => const Home(),
         );
     }
   }

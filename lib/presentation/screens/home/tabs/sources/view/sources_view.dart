@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app_c12_online_sat/base/base_state/base_state.dart';
+import 'package:news_app_c12_online_sat/core/di.dart';
 import 'package:news_app_c12_online_sat/data_model/category_DM.dart';
 import 'package:news_app_c12_online_sat/presentation/common/error_state_widget.dart';
 import 'package:news_app_c12_online_sat/presentation/common/loading_state_widget.dart';
@@ -17,7 +18,7 @@ class SourcesView extends StatefulWidget {
 }
 
 class _SourcesViewState extends State<SourcesView> {
-  var viewModel = SourcesViewModel();
+  var viewModel = SourcesViewModel(sourcesUseCase: getSourcesUseCase());
 
   @override
   void initState() {

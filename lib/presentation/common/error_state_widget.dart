@@ -5,12 +5,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:news_app_c12_online_sat/result.dart';
 
 class ErrorStateWidget extends StatelessWidget {
-  ServerError? serverError;
-  Error? error;
-  String? retryText;
-  VoidCallback? retryButtonAction;
+  final ServerError? serverError;
+  final Error? error;
+  final String? retryText;
+  final VoidCallback? retryButtonAction;
 
-  ErrorStateWidget(
+  const ErrorStateWidget(
       {super.key,
       this.error,
       this.serverError,

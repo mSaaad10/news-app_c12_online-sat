@@ -8,13 +8,14 @@ import 'package:news_app_c12_online_sat/data/api/model/sources_response/sources_
 import 'package:news_app_c12_online_sat/result.dart';
 
 //https://newsapi.org/v2/top-headlines/sources?apiKey=be69a84c535c43928fdad67c7cd21548
+
 class ApiManager {
   static const String _baseUrl = 'newsapi.org';
   static const String _apiKey = 'be69a84c535c43928fdad67c7cd21548';
   static const String sourcesEndPoint = '/v2/top-headlines/sources';
   static const String articlesEndPoint = '/v2/everything';
 
-  static Future<Result<List<Source>>> getSources(String categoryId) async {
+  Future<Result<List<Source>>> getSources(String categoryId) async {
     Uri url = Uri.https(_baseUrl, sourcesEndPoint, {
       'apiKey': _apiKey,
       'category': categoryId,
@@ -37,7 +38,7 @@ class ApiManager {
     }
   }
 
-  static Future<Result<List<Article>>> getArticles(String sourceId) async {
+  Future<Result<List<Article>>> getArticles(String sourceId) async {
     Uri url = Uri.https(_baseUrl, articlesEndPoint, {
       'apiKey': _apiKey,
       'sources': sourceId,

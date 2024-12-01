@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:news_app_c12_online_sat/config/theme/app_styles.dart';
 import 'package:news_app_c12_online_sat/core/colors_manager.dart';
-import 'package:news_app_c12_online_sat/data/api/model/sources_response/source.dart';
+import 'package:news_app_c12_online_sat/domain/etities/source_entitiy.dart';
 
 class SourceWidget extends StatelessWidget {
   SourceWidget({super.key, required this.source, required this.isSelected});
 
-  Source source;
+  SourceEntity source;
   bool isSelected;
 
   @override

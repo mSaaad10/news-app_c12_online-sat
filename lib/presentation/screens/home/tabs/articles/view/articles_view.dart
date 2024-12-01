@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:news_app_c12_online_sat/base/base_state/base_state.dart';
+import 'package:news_app_c12_online_sat/core/di.dart';
+import 'package:news_app_c12_online_sat/data/api/api_manager/api_manager.dart';
 import 'package:news_app_c12_online_sat/data/api/model/sources_response/source.dart';
+import 'package:news_app_c12_online_sat/data/datasource_impl/articles_datasource_impl.dart';
+import 'package:news_app_c12_online_sat/data/reposiotry_impl/articles_repository_impl.dart';
+import 'package:news_app_c12_online_sat/domain/etities/source_entitiy.dart';
+import 'package:news_app_c12_online_sat/domain/usecases/articles_usecase.dart';
 import 'package:news_app_c12_online_sat/presentation/common/error_state_widget.dart';
 import 'package:news_app_c12_online_sat/presentation/common/loading_state_widget.dart';
 import 'package:news_app_c12_online_sat/presentation/screens/home/tabs/articles/viewModel/articles_viewModel.dart';
@@ -10,14 +16,17 @@ import 'package:provider/provider.dart';
 class ArticlesView extends StatefulWidget {
   ArticlesView({super.key, required this.source});
 
-  Source source;
+  SourceEntity source;
 
   @override
   State<ArticlesView> createState() => _ArticlesViewState();
 }
 
 class _ArticlesViewState extends State<ArticlesView> {
-  var viewModel = ArticlesViewModel();
+  // Design Pattern
+  // Injectable
+
+  var viewModel = ArticlesViewModel(articlesUseCase: getArticlesUseCase());
 
   @override
   void initState() {

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:news_app_c12_online_sat/data/api/model/sources_response/source.dart';
+import 'package:news_app_c12_online_sat/domain/etities/source_entitiy.dart';
 import 'package:news_app_c12_online_sat/presentation/screens/home/tabs/articles/view/articles_view.dart';
 import 'package:news_app_c12_online_sat/presentation/screens/home/tabs/sources/widgets/source_widget.dart';
 
 class SourceTabs extends StatefulWidget {
   SourceTabs({super.key, required this.sources});
 
-  List<Source> sources;
+  List<SourceEntity> sources;
   int x = 0;
 
   @override

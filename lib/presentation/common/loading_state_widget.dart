@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:news_app_c12_online_sat/core/colors_manager.dart';
 
 class LoadingStateWidget extends StatelessWidget {
-  final String? loadingMessage;
+   final String? loadingMessage;
 
   const LoadingStateWidget({super.key, this.loadingMessage});
 

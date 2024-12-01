@@ -8,7 +8,11 @@ import 'package:news_app_c12_online_sat/presentation/screens/home/tabs/category_
 import 'package:news_app_c12_online_sat/presentation/screens/home/tabs/settings/settings.dart';
 
 class Home extends StatefulWidget {
-  Home({super.key});
+  static const String routeName = '/home';
+
+  const Home({
+    super.key,
+  });
 
   @override
   State<Home> createState() => _HomeState();

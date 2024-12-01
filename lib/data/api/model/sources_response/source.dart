@@ -1,3 +1,5 @@
+import 'package:news_app_c12_online_sat/domain/etities/source_entitiy.dart';
+
 class Source {
   String? id;
   String? name;
@@ -6,14 +8,15 @@ class Source {
   String? category;
   String? language;
   String? country;
+
   Source({
-      this.id, 
-      this.name, 
-      this.description, 
-      this.url, 
-      this.category, 
-      this.language, 
-      this.country,});
+    this.id,
+    this.name,
+    this.description,
+    this.url,
+    this.category,
+    this.language,
+    this.country,});
 
   Source.fromJson(dynamic json) {
     id = json['id'];
@@ -38,4 +41,7 @@ class Source {
     return map;
   }
 
+  SourceEntity toSourceEntity() {
+    return SourceEntity(id: id, name: name);
+  }
 }
